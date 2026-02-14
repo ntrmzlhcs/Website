@@ -73,22 +73,30 @@
             alert("eat ze bugs");
         }
 
-        function toggleLanguage() {
-            langIndex = (langIndex + 1) % 3;
-            
+        function setLanguage(index) {
+            langIndex = index;
+
             const titles = ["Oskar unser ⭐", "私たちのオスカー ⭐", "我们的奥斯卡 ⭐"];
             const descriptions = [
                 "Ich lerne gerade, wie man Websites mit <strong id='strong-text'>Gemini Code Assist</strong> baut.",
                 "私は <strong id='strong-text'>Gemini Code Assist</strong> でウェブサイトを作る方法を学んでいます。",
-                "我正在学习如何使用 <strong id='strong-text'>Gemini Code Assist</strong> 构建网站。"
+                "我正在學習如何使用 <strong id='strong-text'>Gemini Code Assist</strong> 構建網站。"
             ];
-            const buttons = ["Klick mich", "クリックして", "点击我"];
-            const toggles = ["Deutsch", "日本語", "中文"];
+            const buttons = ["Klick mich", "クリックして", "點擊我"];
+            const toggles = [
+                '<span onclick="setLanguage(1)">日本語</span> / <span onclick="setLanguage(2)">繁體中文</span>',
+                '<span onclick="setLanguage(0)">Deutsch</span> / <span onclick="setLanguage(2)">繁體中文</span>',
+                '<span onclick="setLanguage(0)">Deutsch</span> / <span onclick="setLanguage(1)">日本語</span>'
+            ];
 
             document.getElementById('title').innerText = titles[langIndex];
             document.getElementById('description').innerHTML = descriptions[langIndex];
             document.getElementById('btn-greet').innerText = buttons[langIndex];
-            document.getElementById('lang-toggle').innerText = toggles[langIndex];
+            document.getElementById('lang-toggle').innerHTML = toggles[langIndex];
+        }
+
+        function toggleLanguage() {
+            // This function is now handled by setLanguage via the spans
         }
     </script>
 </body>
