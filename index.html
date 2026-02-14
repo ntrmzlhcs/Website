@@ -7,15 +7,29 @@
     <style>
         /* Das ist CSS - es macht die Seite hübsch */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background-color: #ffd8b1;
-            color: #5d4037;
+            background-color: #f8f9fa;     /* Zeitloses Hellgrau */
+            color: #1e293b;                /* Dunkelgrauer Text für bessere Lesbarkeit */
         }
         h1 { color: #5d4037; }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        img:hover {
+            transform: translateY(-10px) scale(1.02); /* Springt leicht nach oben */
+        }
         button {
             font-size: 1rem;
             padding: 10px 20px;
