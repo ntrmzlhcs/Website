@@ -3,40 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine erste Website</title>
+    <title>Meine Website</title>
     <style>
         /* Das ist CSS - es macht die Seite hübsch */
         body {
-            font-family: sans-serif;
+            font-family: "Helvetica", Arial, sans-serif;
             line-height: 1.6;
             max-width: 800px;
             margin: 40px auto;
             padding: 20px;
-            background-color: #f4f4f9;
-        }
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-color: #ffd8b1;
         }
         h1 { color: #2c3e50; }
-        .ai-status { color: green; font-weight: bold; }
+        button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Willkommen in der Welt des Codings! 🇨🇭</h1>
-        <p>Ich lerne gerade, wie man Websites mit <strong>Gemini Code Assist</strong> baut.</p>
-        
-        <p>KI-Agenten Status: <span class="ai-status">Bereit für Integration</span></p>
-        
-        <button onclick="sagHallo()">Klick mich</button>
-    </div>
+    <h1>Willkommen in der Welt des Codings! 🇨🇭</h1>
+    <p>Ich lerne gerade, wie man Websites mit <strong>Gemini Code Assist</strong> baut.</p>
+    
+    <button onclick="greetUser()">Klick mich</button>
 
     <script>
         // Das ist JavaScript - es macht die Seite interaktiv
-        function sagHallo() {
+        function greetUser() {
             alert("Grüezi! Dein erster JavaScript-Code funktioniert!");
         }
     </script>
