@@ -15,6 +15,13 @@
             background-color: #f8f9fa;     /* Zeitloses Hellgrau */
             color: #1e293b;                /* Dunkelgrauer Text für bessere Lesbarkeit */
         }
+        #lang-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            user-select: none;
+        }
         h1 { color: #1e293b; }
         .image-container {
             display: flex;
@@ -49,17 +56,32 @@
     </style>
 </head>
 <body>
-    <h1>Oskar unser ⭐</h1>
-    <p>Ich lerne gerade, wie man Websites mit <strong>Gemini Code Assist</strong> baut.</p>
+    <div id="lang-toggle" onclick="toggleLanguage()">中文</div>
+
+    <h1 id="title">Oskar unser ⭐</h1>
+    <p id="description">Ich lerne gerade, wie man Websites mit <strong id="strong-text">Gemini Code Assist</strong> baut.</p>
     
-    <button onclick="greetUser()">Klick mich</button>
+    <button id="btn-greet" onclick="greetUser()">Klick mich</button>
 
     <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXp6bm96Ym96Ym96Ym96Ym96Ym96Ym96Ym96Ym96JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="Cat" class="bottom-gif">
 
     <script>
         // Das ist JavaScript - es macht die Seite interaktiv
+        let isChinese = false;
+
         function greetUser() {
             alert("eat ze bugs");
+        }
+
+        function toggleLanguage() {
+            isChinese = !isChinese;
+            
+            document.getElementById('title').innerText = isChinese ? "我们的奥斯卡 ⭐" : "Oskar unser ⭐";
+            document.getElementById('description').innerHTML = isChinese 
+                ? "我正在学习如何使用 <strong id='strong-text'>Gemini Code Assist</strong> 构建网站。" 
+                : "Ich lerne gerade, wie man Websites mit <strong id='strong-text'>Gemini Code Assist</strong> baut.";
+            document.getElementById('btn-greet').innerText = isChinese ? "点击我" : "Klick mich";
+            document.getElementById('lang-toggle').innerText = isChinese ? "Deutsch" : "中文";
         }
     </script>
 </body>
